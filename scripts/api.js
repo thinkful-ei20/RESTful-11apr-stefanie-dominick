@@ -1,5 +1,5 @@
 'use strict';
-/* global */
+/* global $ */
 
 // eslint-disable-next-line no-unused-vars
 const api = (() => {
@@ -20,8 +20,14 @@ const api = (() => {
     });
   };
   const updateItem = function(id, updateData, callback) {
-
-  }
+    $.ajax({
+      url: `${BASE_URL}/${id}`,
+      method: 'PATCH',
+      contentType: 'application/json',
+      data: JSON.stringify(updateData),
+      success: callback
+    });
+  };
   return {
     getItems, createItem, updateItem
   };
