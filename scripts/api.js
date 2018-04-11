@@ -34,7 +34,7 @@ const api = (() => {
   };
   const findAndUpdate = function(id, newData) {
     const targetItem = store.findById(id);
-    Object.assign(newData, targetItem);
+    Object.assign(targetItem, newData);
   };
   return {
     getItems, createItem, updateItem, findAndUpdate
