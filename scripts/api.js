@@ -7,7 +7,19 @@ const api = (() => {
   const getItems = callback => {
     $.getJSON(BASE_URL, callback);
   };
+  const createItem = (name, callback) => {
+    const newItem = JSON.stringify({
+      name
+    });
+    $.ajax({
+      url: BASE_URL,
+      method: 'POST',
+      contentType: 'application/json',
+      data: newItem,
+      success: callback
+    });
+  };
   return {
-    getItems
+    getItems, createItem
   };
 })();
