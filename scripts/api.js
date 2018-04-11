@@ -19,7 +19,10 @@ const api = (() => {
       success: callback
     });
   };
+  const updateItem = function(id, updateData, callback) {
+
+  }
   return {
-    getItems, createItem
+    getItems, createItem, updateItem
   };
 })();
